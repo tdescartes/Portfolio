@@ -4389,13 +4389,13 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url(../fonts/la-brands-400.eot);
+  src: url(../assets/fonts/la-brands-400.eot);
   src:
-    url(../fonts/la-brands-400.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/la-brands-400.woff2) format('woff2'),
-    url(../fonts/la-brands-400.woff) format('woff'),
-    url(../fonts/la-brands-400.ttf) format('truetype'),
-    url(../fonts/la-brands-400.svg#lineawesome) format('svg');
+    url(../assets/fonts/la-brands-400.eot?#iefix) format('embedded-opentype'),
+    url(../assets/fonts/la-brands-400.woff2) format('woff2'),
+    url(../assets/fonts/la-brands-400.woff) format('woff'),
+    url(../assets/fonts/la-brands-400.ttf) format('truetype'),
+    url(../assets/fonts/la-brands-400.svg#lineawesome) format('svg');
 }
 .lab {
   font-family: 'Line Awesome Brands';
@@ -4405,13 +4405,13 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url(../fonts/la-regular-400.eot);
+  src: url(../assets/fonts/la-regular-400.eot);
   src:
-    url(../fonts/la-regular-400.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/la-regular-400.woff2) format('woff2'),
-    url(../fonts/la-regular-400.woff) format('woff'),
-    url(../fonts/la-regular-400.ttf) format('truetype'),
-    url(../fonts/la-regular-400.svg#lineawesome) format('svg');
+    url(../assets/fonts/la-regular-400.eot?#iefix) format('embedded-opentype'),
+    url(../assets/fonts/la-regular-400.woff2) format('woff2'),
+    url(../assets/fonts/la-regular-400.woff) format('woff'),
+    url(../assets/fonts/la-regular-400.ttf) format('truetype'),
+    url(../assets/fonts/la-regular-400.svg#lineawesome) format('svg');
 }
 .lar {
   font-family: 'Line Awesome Free';
@@ -4422,13 +4422,13 @@
   font-style: normal;
   font-weight: 900;
   font-display: auto;
-  src: url(../fonts/la-solid-900.eot);
+  src: url(../assets/fonts/la-solid-900.eot);
   src:
-    url(../fonts/la-solid-900.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/la-solid-900.woff2) format('woff2'),
-    url(../fonts/la-solid-900.woff) format('woff'),
-    url(../fonts/la-solid-900.ttf) format('truetype'),
-    url(../fonts/la-solid-900.svg#lineawesome) format('svg');
+    url(../assets/fonts/la-solid-900.eot?#iefix) format('embedded-opentype'),
+    url(../assets/fonts/la-solid-900.woff2) format('woff2'),
+    url(../assets/fonts/la-solid-900.woff) format('woff'),
+    url(../assets/fonts/la-solid-900.ttf) format('truetype'),
+    url(../assets/fonts/la-solid-900.svg#lineawesome) format('svg');
 }
 .la,
 .las {
