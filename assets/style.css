@@ -2119,5 +2119,41 @@ body .body-overlay {
   color: #fff;
   font-weight: 600;
   margin-bottom: 30px;
-  line-height: 1;
+  line-height: 1.2;
+}
+
+.ai-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 100%; /* Make the container full height */
+}
+
+.ai-skill-section {
+  width: 50%;
+  padding: 20px;
+  align-items: center;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.ai-skill-title {
+  color: #fff;
+}
+
+.ai-skill-list {
+  list-style-type: none;
+  width: calc(95%);
+  padding: 0;
+}
+
+.ai-skill-list li {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.ai-skill-list li::before {
+  content: "- ";
+  margin-right: 5px;
 }
