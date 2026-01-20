@@ -31,8 +31,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/line-awesome.min.css" />
     <link rel="stylesheet" href="assets/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/owl.theme.default.min.css" />
+
     <link rel="stylesheet" href="assets/animate.min.css" />
     <link rel="stylesheet" href="assets/smooth-scrollbar.css" />
     <link rel="stylesheet" href="assets/lightbox.min.css" />
@@ -42,16 +41,14 @@
 
   <body class="home1-page">
     <!-- Video Background -->
-    <!--
-    <video class="body-overlay" muted autoplay loop>
-      <source src="assets/images/video1.mp4" type="video/mp4" />
-    </video>
-    -->
 
     <!-- Page Loader -->
     <div class="page-loader" style="display: none">
       <div class="bounceball"></div>
     </div>
+
+    <!-- Star Canvas Background -->
+    <canvas id="star-canvas"></canvas>
 
     <!-- Menu Icon -->
     <span class="icon-menu">
@@ -154,11 +151,7 @@
           ><span>Projects</span> <i class="las la-grip-vertical"></i
         ></a>
       </li>
-      <!-- <li>
-        <a class="scroll-to" href="#testimonial"
-          ><span>Testimonial</span> <i class="lar la-comment"></i
-        ></a>
-      </li> -->
+
       <li>
         <a class="scroll-to active" href="#contact"
           ><span>Contact</span> <i class="las la-envelope"></i
@@ -166,132 +159,112 @@
       </li>
     </ul>
 
-    <!-- Left Sidebar -->
-    <div class="left-sidebar">
-      <div
-        class="sidebar-header d-flex align-items-center justify-content-between"
-      >
-        <h1>DT</h1>
-        <span class="designation">Software & AI Engineer</span>
-      </div>
-      <img class="me" src="assets/me.jpg" alt="Descartes Tuyishime" />
-      <h2 class="address">New York, NY</h2>
-      <p class="copyright">© 2022 Descartes Tuyishime. All Rights Reserved</p>
-      <ul
-        class="social-profile d-flex align-items-center flex-wrap justify-content-center"
-      >
-        <li>
-          <a
-            href="https://www.linkedin.com/in/tdescartes/"
-            target="_blank"
-            title="Descartes Tuyishime LinkedIn Profile"
-            ><i class="lab la-linkedin"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/tdescartes"
-            target="_blank"
-            title="Descartes Tuyishime GitHub Profile"
-          >
-            <i class="lab la-github"></i
-          ></a>
-        </li>
-      </ul>
-      <a href="https://docs.google.com/document/d/1qh6oB6vVuxqolR8co75vIeKC80hg4lEOJK08N461qXM/edit?usp=sharing" target=”_blank” class="theme-btn"
-        ><i class="las la-file-download"></i> My Resume</a
-      >
-    </div>
-
     <!-- Main Content -->
     <main class="drake-main">
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div class="left-sidebar">
-            <div
-              class="sidebar-header d-flex align-items-center justify-content-between"
-            >
-              <h1>DT</h1>
-              <span class="designation">Software & AI Engineer</span>
-            </div>
-            <img class="me" src="assets/me.jpg" alt="Descartes Tuyishime" />
-            <h2 class="address">New York, NY</h2>
-            <p class="copyright">
-              © 2022 Descartes Tuyishime. All Rights Reserved
-            </p>
-            <ul
-              class="social-profile d-flex align-items-center flex-wrap justify-content-center"
-            >
-              <li>
-                <a
-                  title="Descartes Tuyishime LinkedIn"
-                  href="https://www.linkedin.com/in/tdescartes/"
-                  target="_blank"
-                  ><i class="lab la-linkedin"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/tdescartes"
-                  target="_blank"
-                  title="Descartes Tuyishime LinkedIn"
-                  ><i class="lab la-github"></i
-                ></a>
-              </li>
-            </ul>
-            <a href="https://docs.google.com/document/d/1qh6oB6vVuxqolR8co75vIeKC80hg4lEOJK08N461qXM/edit?usp=sharing" class="theme-btn"
-              ><i class="las la-file-download"></i> My Resume</a
-            >
-          </div>
-
           <section class="hero-section page-section scroll-to-page" id="home">
             <div class="custom-container">
               <div class="hero-content content-width">
-                <div class="section-header">
-                  <h4
-                    class="subtitle scroll-animation"
-                    data-animation="fade_from_bottom"
-                  >
-                    <i class="las la-home"></i> Introduce
-                  </h4>
-                  <h1
-                    class="scroll-animation"
-                    data-animation="fade_from_bottom"
-                  >
-                    Hi! I am <span>Descartes</span>, I am Software Engineer, AI
-                    Developer, and a Math Enthusiast!
-                  </h1>
-                </div>
-                <!-- <p class="scroll-animation" data-animation="fade_from_bottom">
-                  I design and code beautifully simple things and I love what I
-                  do. Just simple like that!
-                </p> -->
-                <a
-                  href="#portfolio"
-                  class="go-to-project-btn scroll-to scroll-animation"
-                  data-animation="rotate_up"
-                >
-                  <img
-                    src="assets/round-text.png"
-                    alt="Rounded text by Descartes Tuyishime"
-                  />
-                  <i class="las la-arrow-down"></i>
-                </a>
+                <div class="row">
+                  <!-- Text Column -->
+                  <div class="col-lg-7">
+                    <div class="section-header">
+                      <h4
+                        class="subtitle scroll-animation"
+                        data-animation="fade_from_bottom"
+                      >
+                        <i class="las la-home"></i> Introduce
+                      </h4>
+                      <h1
+                        class="scroll-animation"
+                        data-animation="fade_from_bottom"
+                      >
+                        Hi! I am <span>Descartes</span>, I am Software Engineer,
+                        AI Developer, and a Math Enthusiast!
+                      </h1>
+                    </div>
 
-                <div class="facts d-flex">
-                  <div
-                    class="left scroll-animation"
-                    data-animation="fade_from_left"
-                  >
-                    <h1>4+</h1>
-                    <p>Years of Coding <br />Experience</p>
+                    <div
+                      class="scroll-animation mb-5"
+                      data-animation="fade_from_bottom"
+                    >
+                      <p>
+                        I design and build sophisticated software and AI
+                        solutions. Let's build something amazing together.
+                      </p>
+                    </div>
+
+                    <div class="facts d-flex">
+                      <div
+                        class="left scroll-animation"
+                        data-animation="fade_from_left"
+                      >
+                        <h1>4+</h1>
+                        <p>Years of Coding <br />Experience</p>
+                      </div>
+                      <div
+                        class="right scroll-animation"
+                        data-animation="fade_from_right"
+                      >
+                        <h1>16+</h1>
+                        <p>projects completed <br />(Software and AI)</p>
+                      </div>
+
+                      <!-- Circular Button Moved Here -->
+                      <a
+                        href="#portfolio"
+                        class="go-to-project-btn scroll-to scroll-animation"
+                        data-animation="rotate_up"
+                        style="margin: 0; margin-left: auto"
+                      >
+                        <img
+                          src="assets/round-text.png"
+                          alt="Rounded text by Descartes Tuyishime"
+                        />
+                        <i class="las la-arrow-down"></i>
+                      </a>
+                    </div>
                   </div>
-                  <div
-                    class="right scroll-animation"
-                    data-animation="fade_from_right"
-                  >
-                    <h1>16+</h1>
-                    <p>projects completed <br />(Software and AI)</p>
+
+                  <!-- Profile Card Column -->
+                  <div class="col-lg-5">
+                    <div
+                      class="hero-profile-card scroll-animation"
+                      data-animation="fade_from_right"
+                    >
+                      <img src="assets/me.jpg" alt="Descartes Tuyishime" />
+                      <h2 class="address">Austin, TX</h2>
+
+                      <ul
+                        class="social-profile d-flex align-items-center flex-wrap justify-content-center mt-3 mb-4"
+                      >
+                        <li>
+                          <a
+                            href="https://linkedin.com/in/tdescartes"
+                            target="_blank"
+                            class="social-btn"
+                            ><i class="lab la-linkedin"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://github.com/tdescartes"
+                            target="_blank"
+                            class="social-btn"
+                            ><i class="lab la-github"></i
+                          ></a>
+                        </li>
+                      </ul>
+
+                      <a
+                        href="https://docs.google.com/document/d/1qh6oB6vVuxqolR8co75vIeKC80hg4lEOJK08N461qXM/edit?usp=sharing"
+                        target="_blank"
+                        class="theme-btn w-100"
+                      >
+                        <i class="las la-file-download"></i> My Resume
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -308,21 +281,23 @@
                   >
                     <i class="lar la-user"></i> About
                   </h4>
-                  <!-- <h1
-                    class="scroll-animation"
-                    data-animation="fade_from_bottom"
-                  >
-                    Every great design begins with<br />
-                    an even <span>better story</span>
-                  </h1> -->
                 </div>
-                <p class="scroll-animation" data-animation="fade_from_bottom" style="color: white;">
-                  I'm a full-stack software engineer with a background in Computer Science, Mathematics, 
-                  and Machine Learning. I previously interned at Microsoft, where I developed a TypeSpec 
-                  Azure Function prototype that converts API definitions into deployable Azure Functions. 
-                  Currently, I am a Software Engineering Fellow at HeadStarter AI, where, over the next five weeks, 
-                  I will be working on five AI projects. For my final project, I aim to achieve one of the following 
-                  goals: create 1,000 accounts, sign up 1,000 people for a waitlist, or generate $1,000 in revenue.</p>
+                <p
+                  class="scroll-animation"
+                  data-animation="fade_from_bottom"
+                  style="color: white"
+                >
+                  I'm a Software Engineer with a Bachelor of Science in Computer
+                  Science and minors in Math, IT, and IS from Marist College
+                  (Graduated May 2025). I have strong experience in Full Stack
+                  Development, AI/ML, and Systems Programming. My technical
+                  toolkit includes Python (Django, FastAPI),
+                  JavaScript/TypeScript (Next.js, React), C++, Java, and Go,
+                  along with cloud platforms like AWS and GCP. I am passionate
+                  about building scalable applications, from AI-powered customer
+                  care systems to complex network protocols and business
+                  management platforms.
+                </p>
               </div>
             </div>
           </section>
@@ -335,69 +310,71 @@
                     class="subtitle scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <i class="las la-briefcase"></i> Education and Experience
+                    <i class="las la-briefcase"></i> Resume
                   </h4>
                   <h1
                     class="scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <span>Experience</span>
+                    <span>Experience & Education</span>
                   </h1>
                 </div>
 
                 <div class="resume-timeline">
-                  <div
-                    class="item scroll-animation"
-                    data-animation="fade_from_right"
-                  >
-                    <span class="date">August 2024 - Present</span>
-                    <h2>HeadStarter AI</h2>
-                    <h6>Software Engineer Fellow</h6>
-                    <!--<p>SheltRiseadfadfadsfadf </p> -->
-                  </div>
-                  <div
-                    class="item scroll-animation"
-                    data-animation="fade_from_right"
-                  >
-                    <span class="date">July 2024 - Present</span>
-                    <h2>SheltRise</h2>
-                    <h6>Software Engineer</h6>
-                    <!--<p>SheltRiseadfadfadsfadf </p> -->
-                  </div>
+                  <!-- Experience -->
                   <div
                     class="item scroll-animation"
                     data-animation="fade_from_right"
                   >
                     <span class="date">May 2022 – August 2022</span>
                     <h2>Microsoft Corporation</h2>
-                    <h6>Software Engineer Intern</h6>
-                    <!--<p>SheltRiseadfadfadsfadf </p> -->
+                    <h6>Software Engineer Intern | Redmond, WA</h6>
+                    <p>
+                      Engineered TypeSpec Azure Function Prototype solution,
+                      streamlining API definition to Azure Function conversion,
+                      reducing deployment time by 77%.
+                    </p>
+                    <p>
+                      Developed and deployed TypeSpec developer documentation
+                      website using Eleventy. Integrated CI/CD Azure pipelines.
+                    </p>
                   </div>
                   <div
                     class="item scroll-animation"
                     data-animation="fade_from_right"
                   >
                     <span class="date">June 2021 – February 2022</span>
-                    <h2>Marist Web Services</h2>
-                    <h6>Software Engineer</h6>
-                    <!--<p>SheltRiseadfadfadsfadf </p> -->
+                    <h2>Marist College Web Services</h2>
+                    <h6>Student Software Developer</h6>
+                    <p>
+                      Developed static web pages and Java portlets on Marist
+                      Magazine site using HTML, CSS, JavaScript, and Java.
+                    </p>
                   </div>
-  
+
+                  <!-- Education -->
                   <div
                     class="item scroll-animation"
                     data-animation="fade_from_right"
                   >
-                  <h1
-                  class="scroll-animation"
-                  data-animation="fade_from_bottom"
-                >
-                  <span>Education</span>
-                </h1>
-                    <span class="date">2019 - 2024</span>
-                    <h2>
-                      Bachelor of Science in Computer Science and Mathematics
-                    </h2>
-                    <p>Marist College</p>
+                    <h1
+                      class="scroll-animation"
+                      data-animation="fade_from_bottom"
+                      style="font-size: 30px; margin: 30px 0 15px"
+                    >
+                      <span>Education</span>
+                    </h1>
+                    <span class="date">Graduated May 2025</span>
+                    <h2>Bachelor of Science in Computer Science</h2>
+                    <h6>Minors in Math, IT, and IS</h6>
+                    <p>Marist College, Poughkeepsie, NY</p>
+                    <br />
+                    <p style="font-size: 14px; color: #999">
+                      <b>Coursework:</b> Internetworking, Computer Org &
+                      Architecture, Operating Systems, Database Management, Data
+                      Structure & Algorithm, Quantum Algorithm, Data Mining, ML,
+                      Probability & Statistics
+                    </p>
                   </div>
                 </div>
               </div>
@@ -415,56 +392,83 @@
                     class="subtitle scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <i class="las la-stream"></i>Certifications
+                    <i class="las la-certificate"></i> Credential & Expertise
                   </h4>
                   <h1
                     class="scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    My <span>Specializations</span>
+                    Professional <span>Certifications</span>
                   </h1>
                 </div>
 
-                <div class="services-items">
+                <div class="certifications-grid">
+                  <!-- Machine Learning -->
                   <div
-                    class="service-item scroll-animation"
+                    class="certificate-card scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <i class="las la-bezier-curve"></i>
-                    <h2>Machine Learning &amp; DeepLearning</h2>
-                    <!--
-                    <p>Machine Learning Specialization</p> -->
-                    <span class="projects"
-                      >3 Certificates &amp; 9 Projects</span
-                    >
+                    <div class="card-header">
+                      <i class="las la-brain"></i>
+                      <span class="issuer">DeepLearning.AI</span>
+                    </div>
+                    <h2>ML & Deep Learning Specializations</h2>
+                    <div class="cert-details">
+                      <p>
+                        Mastered supervised & unsupervised learning, recommender
+                        systems, and reinforcement learning. Built real-world ML
+                        models.
+                      </p>
+                    </div>
+                    <a href="#portfolio" class="cert-link"
+                      >View Projects <i class="las la-arrow-right"></i
+                    ></a>
                   </div>
+
+                  <!-- DevOps -->
                   <div
-                    class="service-item scroll-animation"
+                    class="certificate-card scroll-animation"
                     data-animation="fade_from_bottom"
+                    data-delay="0.2s"
                   >
-                    <i class="las la-code"></i>
-                    <h2>Software Development + Data Analytics</h2>
-                    <!-- <p>
-                      I build websites that go live with Framer, Webflow, or
-                      WordPress
-                    </p> -->
-                    <span class="projects"
-                      >3 Certificates &amp; 5 Projects</span
-                    >
+                    <div class="card-header">
+                      <i class="las la-server"></i>
+                      <span class="issuer">IBM</span>
+                    </div>
+                    <h2>IBM DevOps & Software Engineering</h2>
+                    <div class="cert-details">
+                      <p>
+                        Comprehensive training in DevOps methodologies, CI/CD,
+                        Containerization (Docker, Kubernetes), and Software
+                        Engineering principles.
+                      </p>
+                    </div>
+                    <a href="#about" class="cert-link"
+                      >View Credential <i class="las la-arrow-right"></i
+                    ></a>
                   </div>
+
+                  <!-- Front End -->
                   <div
-                    class="service-item scroll-animation"
+                    class="certificate-card scroll-animation"
                     data-animation="fade_from_bottom"
+                    data-delay="0.4s"
                   >
-                    <i class="las la-user-shield"></i>
-                    <h2>CyberSecurity</h2>
-                    <!-- <p>
-                      Increase the traffic for your website with SEO
-                      optimization
-                    </p> -->
-                    <span class="projects"
-                      >1 Certificates &amp; 2 Projects</span
-                    >
+                    <div class="card-header">
+                      <i class="las la-layer-group"></i>
+                      <span class="issuer">Udacity</span>
+                    </div>
+                    <h2>Front End Web Development Nanodegree</h2>
+                    <div class="cert-details">
+                      <p>
+                        Mastered modern frontend web development, including
+                        responsive design, accessible applications, and build
+                        tools.
+                      </p>
+                    </div>
+                    <a href="#about" class="cert-link"
+                      >View Credential <i class="las la-arrow-right"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -479,210 +483,95 @@
                     class="subtitle scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <i class="las la-shapes"></i> Skills &amp; Frameworks
+                    <i class="las la-shapes"></i> Competencies
                   </h4>
                   <h1
                     class="scroll-animation"
                     data-animation="fade_from_bottom"
                   >
-                    <span>Skills and Frameworks</span>
+                    Skills & <span>Frameworks</span>
                   </h1>
                 </div>
 
-                <div class="row skills text-center">
+                <div class="row skills">
+                  <!-- Languages -->
                   <div
-                    class="col-md-4 scroll-animation"
+                    class="col-md-6 scroll-animation"
                     data-animation="fade_from_left"
                   >
-                    <div class="skill">
-                      <div class="skill-inner">
-                        <h2 class="name">Frontend</h2>
-                        <div class="skill-box">
-                          <span class="skill-title">HTML/CSS</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 95%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">JavaScript/TypeScript</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 80%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title"> React (JS + TS)</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 80%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title"> Flutter</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 60%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">React Native</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 70%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-md-4 scroll-animation"
-                    data-animation="fade_from_bottom"
-                  >
-                    <div class="skill">
-                      <div class="skill-inner">
-                        <h2 class="name">Backend</h2>
-                        <div class="skill-box">
-                          <span class="skill-title">Node.js</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 85%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title"
-                            >Python (FastApi, Flask)</span
-                          >
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 90%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">Java</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 80%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">C++</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 60%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
+                    <div class="skill-box">
+                      <span class="skill-title">Languages</span>
+                      <div class="skill-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">HTML5 & CSS3</span>
                       </div>
                     </div>
                   </div>
 
+                  <!-- Frameworks -->
                   <div
-                    class="col-md-4 scroll-animation"
-                    data-animation="fade_from_left"
+                    class="col-md-6 scroll-animation"
+                    data-animation="fade_from_right"
                   >
-                    <div class="skill">
-                      <div class="skill-inner">
-                        <h2 class="name">Database &amp; DevOps</h2>
-                        <div class="skill-box">
-                          <span class="skill-title">MongoDB</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 80%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">MySQL/Postgress</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 90%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">AWS</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 70%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
-                        <div class="skill-box">
-                          <span class="skill-title">CI/CD</span>
-                          <div class="w3-border W3-grey" id="skillbar">
-                            <div
-                              class="w3-center"
-                              style="width: 99%"
-                              id="skillcontent"
-                            ></div>
-                          </div>
-                        </div>
+                    <div class="skill-box">
+                      <span class="skill-title">Frameworks & Libraries</span>
+                      <div class="skill-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">SIP.js</span>
+                        <span class="tech-tag">Bootstrap/Tailwind</span>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Tools & Cloud -->
                   <div
-                    class="col-md-12 scroll-animation"
+                    class="col-md-6 scroll-animation"
                     data-animation="fade_from_left"
                   >
-                    <div class="skill">
-                      <div class="skill-inner">
-                        <div class="ai-skills">
-                          <div class="ai-skill-section">
-                            <h2 class="ai-skill-title">Machine Learning</h2>
-                            <ul class="ai-skill-list">
-                              <li>
-                                Supervised Learning, Unsupervised Learning, RL
-                              </li>
-                              <li>
-                                Model Evaluation & Selection, FE, Model
-                                Deployment
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="ai-skill-section">
-                            <h2 class="ai-skill-title">Deep Learning</h2>
-                            <ul class="ai-skill-list">
-                              <li>NNs, CNNs, RNNs</li>
-                              <li>
-                                GANs, AEs, Transfer Learning, Hyperparameter
-                                Tuning
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
+                    <div class="skill-box">
+                      <span class="skill-title">Tools & Cloud</span>
+                      <div class="skill-tags">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Google Cloud (GCP)</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Git / GitHub</span>
+                        <span class="tech-tag">Linux / Unix</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Vercel</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- AI & ML -->
+                  <div
+                    class="col-md-6 scroll-animation"
+                    data-animation="fade_from_right"
+                  >
+                    <div class="skill-box">
+                      <span class="skill-title">AI & Machine Learning</span>
+                      <div class="skill-tags">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Hugging Face Transformers</span>
+                        <span class="tech-tag">Generative AI (LLMs)</span>
+                        <span class="tech-tag">RAG Implementation</span>
                       </div>
                     </div>
                   </div>
@@ -713,8 +602,9 @@
                 </div>
 
                 <div class="row portfolio-items">
+                  <!-- StyrCan -->
                   <div
-                    class="col-md-6 scroll-animation"
+                    class="col-md-6 col-lg-3 scroll-animation"
                     data-animation="fade_from_bottom"
                   >
                     <div class="portfolio-item portfolio-full">
@@ -725,24 +615,33 @@
                         >
                           <img
                             src="assets/portfolio1.jpg"
-                            alt="Portfolio by Descartes Tuyishime"
+                            alt="StyrCan Project"
                           />
                         </a>
 
                         <ul class="portfolio-categories">
-                          <li><a href="#">Figma</a></li>
-                          <li><a href="#">Framer</a></li>
-                          <li><a href="#">WordPress</a></li>
+                          <li><a href="#">Next.js</a></li>
+                          <li><a href="#">FastAPI</a></li>
+                          <li><a href="#">Oracle AD</a></li>
                         </ul>
                       </div>
                       <h2>
-                        <a href="#">Bureau - Architecture Studio Website</a>
+                        <a href="#">StyrCan - Business Management Platform</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
                       </h2>
+                      <p>
+                        A comprehensive business management platform designed to
+                        streamline operations, featuring inventory tracking,
+                        employee management, and financial reporting modules.
+                      </p>
                     </div>
                   </div>
 
+                  <!-- SheltRise -->
                   <div
-                    class="col-md-6 scroll-animation"
+                    class="col-md-6 col-lg-3 scroll-animation"
                     data-animation="fade_from_left"
                   >
                     <div class="portfolio-item portfolio-half">
@@ -753,20 +652,32 @@
                         >
                           <img
                             src="assets/portfolio2.jpg"
-                            alt="Portfolio by Descartes Tuyishime"
+                            alt="SheltRise Project"
                           />
                         </a>
                         <ul class="portfolio-categories">
-                          <li><a href="#">WordPress</a></li>
-                          <li><a href="#">Laravel/PHP</a></li>
+                          <li><a href="#">Django</a></li>
+                          <li><a href="#">React</a></li>
+                          <li><a href="#">PostgreSQL</a></li>
                         </ul>
                       </div>
-                      <h2><a href="#">Moonex WordPress Theme</a></h2>
+                      <h2>
+                        <a href="#">SheltRise - Housing Management</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
+                      </h2>
+                      <p>
+                        A housing management solution connecting tenants and
+                        landlords, facilitating seamless rent payments,
+                        maintenance requests, and contract management.
+                      </p>
                     </div>
                   </div>
 
+                  <!-- AI Customer Care -->
                   <div
-                    class="col-md-6 scroll-animation"
+                    class="col-md-6 col-lg-3 scroll-animation"
                     data-animation="fade_from_right"
                   >
                     <div class="portfolio-item portfolio-half">
@@ -777,20 +688,32 @@
                         >
                           <img
                             src="assets/portfolio3.jpg"
-                            alt="Portfolio by Descartes Tuyishime"
+                            alt="AI Customer Care"
                           />
                         </a>
                         <ul class="portfolio-categories">
-                          <li><a href="#">Figma</a></li>
-                          <li><a href="#">Webflow</a></li>
+                          <li><a href="#">Next.js</a></li>
+                          <li><a href="#">Firebase</a></li>
+                          <li><a href="#">AI/NLP</a></li>
                         </ul>
                       </div>
-                      <h2><a href="#">Taskly Dashboard</a></h2>
+                      <h2>
+                        <a href="#">Automated AI Customer Care System</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
+                      </h2>
+                      <p>
+                        An intelligent automated support agent leveraging NLP to
+                        handle customer inquiries, route complex tickets, and
+                        significantly improve response times.
+                      </p>
                     </div>
                   </div>
 
+                  <!-- Custom Network Protocols -->
                   <div
-                    class="col-md-6 scroll-animation"
+                    class="col-md-6 col-lg-3 scroll-animation"
                     data-animation="fade_from_bottom"
                   >
                     <div class="portfolio-item portfolio-half">
@@ -801,22 +724,32 @@
                         >
                           <img
                             src="assets/portfolio4.jpg"
-                            alt="Portfolio by Descartes Tuyishime"
+                            alt="Network Protocols"
                           />
                         </a>
                         <ul class="portfolio-categories">
-                          <li><a href="#">Figma</a></li>
-                          <li><a href="#">React</a></li>
+                          <li><a href="#">C++</a></li>
+                          <li><a href="#">Networking</a></li>
+                          <li><a href="#">UDP/TCP</a></li>
                         </ul>
                       </div>
                       <h2>
-                        <a href="#">Hinterland - Real Estate Site Redesign</a>
+                        <a href="#">Custom Network Protocols</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
                       </h2>
+                      <p>
+                        A high-performance networking framework implemented in
+                        C++, focusing on low-latency data transmission and
+                        robust error handling for real-time applications.
+                      </p>
                     </div>
                   </div>
 
+                  <!-- PathOS -->
                   <div
-                    class="col-md-12 scroll-animation"
+                    class="col-md-6 col-lg-3 scroll-animation"
                     data-animation="fade_from_bottom"
                   >
                     <div class="portfolio-item portfolio-half">
@@ -825,16 +758,58 @@
                           href="assets/portfolio5.jpg"
                           data-lightbox="example-1"
                         >
-                          <img
-                            src="assets/portfolio5.jpg"
-                            alt="Portfolio by Descartes Tuyishime"
-                          />
+                          <img src="assets/portfolio5.jpg" alt="PathOS" />
                         </a>
                         <ul class="portfolio-categories">
-                          <li><a href="#">Framer</a></li>
+                          <li><a href="#">TypeScript</a></li>
+                          <li><a href="#">OS</a></li>
                         </ul>
                       </div>
-                      <h2><a href="#">Lewis Portfolio Framer Template</a></h2>
+                      <h2>
+                        <a href="#">PathOS - Browser-based OS</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
+                      </h2>
+                      <p>
+                        A browser-based operating system simulation built with
+                        TypeScript, exploring kernel concepts, process
+                        scheduling, and file system management in a web
+                        environment.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Opinion-Net -->
+                  <div
+                    class="col-md-6 col-lg-3 scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <div class="portfolio-item portfolio-half">
+                      <div class="portfolio-item-inner">
+                        <a
+                          href="assets/portfolio5.jpg"
+                          data-lightbox="example-1"
+                        >
+                          <img src="assets/portfolio2.jpg" alt="Opinion-Net" />
+                        </a>
+                        <ul class="portfolio-categories">
+                          <li><a href="#">React Native</a></li>
+                          <li><a href="#">AWS</a></li>
+                          <li><a href="#">NLP</a></li>
+                        </ul>
+                      </div>
+                      <h2>
+                        <a href="#">Opinion-Net Mobile App</a>
+                        <a href="#" class="github-project-link" target="_blank"
+                          ><i class="lab la-github"></i
+                        ></a>
+                      </h2>
+                      <p>
+                        A mobile platform for gathering and analyzing public
+                        opinion, utilizing AWS for scalable data processing and
+                        machine learning for sentiment analysis.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -986,17 +961,46 @@
       </div>
     </main>
 
+    <footer class="footer-area">
+      <div class="custom-container">
+        <div class="footer-content-single-line">
+          <div class="copyright-text">© 2026 Descartes Tuyishime</div>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/descartes-tuyishime/"
+                target="_blank"
+              >
+                <i class="lab la-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/DescartesTuyishime" target="_blank">
+                <i class="lab la-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:dtuyishime1@gmail.com">
+                <i class="las la-envelope"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="assets/jquery.js"></script>
     <script src="assets/bootstrap.bundle.min.js"></script>
-    <script src="assets/owl.carousel.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
     <script src="assets/ScrollToPlugin.min.js"></script>
     <script src="assets/lightbox.min.js"></script>
     <script src="assets/main.js"></script>
     <script src="assets/ajax-form.js"></script>
-    <script src="assets/color.js"></script>
+
+    <script src="assets/star-animation.js"></script>
     <!-- Google tag (gtag.js) -->
     <script
       async
