@@ -40,7 +40,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#111317] text-[#e2e2e8] selection:bg-[#28e98c] selection:text-[#00391d] flex flex-col font-body">
+    <div className="min-h-screen bg-[#111317] text-[#e2e2e8] selection:bg-[#10b981] selection:text-[#000000] flex flex-col font-body">
       {/* Top Sticky Header */}
       <Navbar
         onOpenResume={() => setResumeOpen(true)}
