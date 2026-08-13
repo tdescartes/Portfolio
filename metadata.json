@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio",
+  "description": "Portfolio of Descartes Tuyishime, Software Engineer & AI Developer featuring interactive showcase, experience, bento grid projects, terminal mode, and contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
