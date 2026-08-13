@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { Menu, X, Terminal, Code, FileText, Sparkles } from 'lucide-react';
+import { Menu, X, Terminal, FileText, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
   onOpenResume: () => void;
   onOpenTerminal: () => void;
-  onOpenCodeInspector: () => void;
   onOpenAiAssistant: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenResume,
   onOpenTerminal,
-  onOpenCodeInspector,
   onOpenAiAssistant,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -82,15 +80,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Open Terminal"
             >
               <Terminal className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={onOpenCodeInspector}
-              className="p-2 rounded hover:bg-[#1A1D23] hover:text-[#59ffa3] transition-colors cursor-pointer"
-              title="View AST & Source Inspector"
-              aria-label="Open Code Inspector"
-            >
-              <Code className="w-5 h-5" />
             </button>
 
             {/* Mobile Menu Toggle */}

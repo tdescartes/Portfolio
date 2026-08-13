@@ -9,7 +9,6 @@ import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { ResumeModal } from './components/ResumeModal';
 import { TerminalDrawer } from './components/TerminalDrawer';
-import { CodeInspectorModal } from './components/CodeInspectorModal';
 import { AiAssistantModal } from './components/AiAssistantModal';
 import { Project } from './types';
 
@@ -17,7 +16,6 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [resumeOpen, setResumeOpen] = useState(false);
   const [terminalOpen, setTerminalOpen] = useState(false);
-  const [codeInspectorOpen, setCodeInspectorOpen] = useState(false);
   const [aiAssistantOpen, setAiAssistantOpen] = useState(false);
   const [selectedSkillFilter, setSelectedSkillFilter] = useState<string | null>(null);
 
@@ -47,7 +45,6 @@ export default function App() {
       <Navbar
         onOpenResume={() => setResumeOpen(true)}
         onOpenTerminal={() => setTerminalOpen(true)}
-        onOpenCodeInspector={() => setCodeInspectorOpen(true)}
         onOpenAiAssistant={() => setAiAssistantOpen(true)}
       />
 
@@ -96,11 +93,6 @@ export default function App() {
           setTerminalOpen(false);
           setAiAssistantOpen(true);
         }}
-      />
-
-      <CodeInspectorModal
-        isOpen={codeInspectorOpen}
-        onClose={() => setCodeInspectorOpen(false)}
       />
 
       <AiAssistantModal
