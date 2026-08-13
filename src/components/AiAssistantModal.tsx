@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Sparkles, Send, Bot, User } from 'lucide-react';
-import { PERSONAL_INFO, EXPERIENCES, EDUCATION, COMPETENCY_CATEGORIES, PROJECTS } from '../data/portfolioData';
+import { PERSONAL_INFO } from '../data/portfolioData';
+import { synthesizeRagAnswer } from '../data/ragKnowledgeBase';
 
 interface AiAssistantModalProps {
   isOpen: boolean;
@@ -16,7 +17,7 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'ai',
-      text: "Hello! I am Descartes' AI Assistant. Ask me anything about his software engineering background, Microsoft internship, Marist College coursework, or featured projects like ThermaGuard and xCompiler!",
+      text: "Hello! I am Descartes' AI Assistant. Ask me anything about his software engineering background, Microsoft & Google internships, Marist College degree, or featured projects like SheltRise, Poruta, and ThermaGuard!",
     },
   ]);
   const [inputVal, setInputVal] = useState('');
@@ -37,39 +38,7 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
   if (!isOpen) return null;
 
   const generateAnswer = (question: string): string => {
-    const q = question.toLowerCase();
-
-    if (q.includes('stack') || q.includes('skill') || q.includes('language')) {
-      return `Descartes is proficient in Python, TypeScript/JavaScript, C++/C, Java, and SQL. His core framework stack includes React/Next.js, Node.js/Express, Django/FastAPI, PyTorch, TensorFlow, AWS/Azure, Docker, and Linux.`;
-    }
-
-    if (q.includes('microsoft') || q.includes('intern') || q.includes('experience')) {
-      const ms = EXPERIENCES[0];
-      return `At Microsoft (May 2022 - Aug 2022), Descartes served as a Software Engineer Intern. He engineered highly scalable backend services for enterprise cloud infrastructure using C#, .NET, and Azure, optimizing data processing pipelines to reduce latency by 30%.`;
-    }
-
-    if (q.includes('marist') || q.includes('graduate') || q.includes('degree') || q.includes('education')) {
-      return `Descartes is pursuing his Bachelor of Science in Computer Science at Marist College, with an expected graduation date of May 2025. His relevant coursework includes Data Structures & Algorithms, Operating Systems, Artificial Intelligence, Database Management, and Software Engineering.`;
-    }
-
-    if (q.includes('thermaguard') || q.includes('iot') || q.includes('hardware')) {
-      const tg = PROJECTS.find((p) => p.id === 'thermaguard')!;
-      return `${tg.title} is an advanced environmental monitoring system built with ESP32 microcontrollers and C++. It features real-time telemetry over MQTT, predictive anomaly detection with custom Kalman filtering, and a reactive dashboard for industrial applications.`;
-    }
-
-    if (q.includes('poruta') || q.includes('ai') || q.includes('customs')) {
-      return `Poruta is an intelligent customs declaration platform leveraging NLP (Python, Transformers, PyTorch) to automate document classification and risk assessment for international shipping manifests with over 94.8% first-pass accuracy.`;
-    }
-
-    if (q.includes('xcompiler') || q.includes('compiler') || q.includes('parser')) {
-      return `xCompiler is a custom lexical analyzer and parser built entirely in TypeScript. It parses a functional programming language, generating abstract syntax trees (AST) and intermediate code representation at over 50,000 tokens/sec.`;
-    }
-
-    if (q.includes('contact') || q.includes('email') || q.includes('hire')) {
-      return `You can reach Descartes directly at ${PERSONAL_INFO.email}. He is actively open to full-time software engineering and AI development roles!`;
-    }
-
-    return `${PERSONAL_INFO.name} is a Software Engineer & AI Developer pursuing his BS in Computer Science at Marist College (May 2025). He has interned at Microsoft, created 10+ projects across IoT, AI/ML, and Systems Programming, and specializes in high-performance backends. Feel free to ask specific questions about his work!`;
+    return synthesizeRagAnswer(question);
   };
 
   const handleSend = async (userText: string) => {
