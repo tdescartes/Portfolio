@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   secondaryEmail: "tuyishime.descartes@gmail.com",
   website: "https://tdescartes.dev",
   github: "https://github.com/tdescartes",
-  linkedin: "https://linkedin.com/in/descartestuyishime",
+  linkedin: "https://www.linkedin.com/in/tdescartes/",
   twitter: "https://twitter.com/descartestuyi",
   location: "Poughkeepsie, NY 12601"
 };
