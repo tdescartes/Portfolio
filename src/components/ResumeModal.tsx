@@ -61,7 +61,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
         {/* Sticky Header Bar */}
         <div className="bg-[#111317] border-b border-[#2D3139] px-4 sm:px-6 py-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 z-10 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#28e98c]/20 text-[#28e98c] rounded border border-[#28e98c]">
+            <div className="p-2 bg-[#10b981]/20 text-[#10b981] rounded border border-[#10b981]">
               <FileText className="w-5 h-5" />
             </div>
             <div>
@@ -75,7 +75,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
             <button
               onClick={() => setActiveTab('pdf')}
               className={`font-code-label text-xs px-3 py-1.5 rounded-md font-medium transition-colors flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'pdf' ? 'bg-[#28e98c] text-black font-bold' : 'text-[#999999] hover:text-white'
+                activeTab === 'pdf' ? 'bg-[#10b981] text-black font-bold' : 'text-[#999999] hover:text-white'
               }`}
             >
               <Eye className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
             <button
               onClick={() => setActiveTab('text')}
               className={`font-code-label text-xs px-3 py-1.5 rounded-md font-medium transition-colors flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'text' ? 'bg-[#28e98c] text-black font-bold' : 'text-[#999999] hover:text-white'
+                activeTab === 'text' ? 'bg-[#10b981] text-black font-bold' : 'text-[#999999] hover:text-white'
               }`}
             >
               <FileText className="w-3.5 h-3.5" />
@@ -96,7 +96,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
             <a
               href="/Resume_Descartes_Tuyishime (2).pdf"
               download="Resume_Descartes_Tuyishime.pdf"
-              className="font-code-label text-xs bg-[#28e98c] text-black px-4 py-2 rounded font-bold hover:bg-[#59ffa3] transition-colors flex items-center gap-1.5 cursor-pointer shadow"
+              className="font-code-label text-xs bg-[#10b981] text-black px-4 py-2 rounded font-bold hover:bg-[#34d399] transition-colors flex items-center gap-1.5 cursor-pointer shadow"
             >
               <Download className="w-4 h-4" />
               Download PDF
@@ -115,7 +115,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
 
             <button
               onClick={handleCopyText}
-              className="font-code-label text-xs bg-[#1A1D23] text-[#28e98c] border border-[#2D3139] px-3 py-2 rounded hover:border-[#28e98c] transition-colors flex items-center gap-1.5 cursor-pointer hidden sm:flex"
+              className="font-code-label text-xs bg-[#1A1D23] text-[#10b981] border border-[#2D3139] px-3 py-2 rounded hover:border-[#10b981] transition-colors flex items-center gap-1.5 cursor-pointer hidden sm:flex"
               title="Copy plain text"
             >
               {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -136,7 +136,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
           <div className="flex-1 p-2 sm:p-3 bg-[#0a0c0f] flex flex-col items-center overflow-hidden h-full min-h-0">
             <div className="w-full bg-[#1A1D23] px-4 py-1.5 border border-[#2D3139] rounded-t-lg flex justify-between items-center text-xs font-code-label text-[#999999] shrink-0">
               <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#28e98c]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#10b981]"></span>
                 Viewing PDF: <strong className="text-white">Resume_Descartes_Tuyishime.pdf</strong>
               </span>
               <div className="flex items-center gap-3">
@@ -168,36 +168,37 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
             {/* Header */}
             <div className="border-b border-[#2D3139] pb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
               <div>
-                <h1 className="font-headline text-3xl font-extrabold text-[#28e98c]">{PERSONAL_INFO.name}</h1>
-                <p className="font-code-label text-sm text-[#b9f1ff] font-medium mt-1">{PERSONAL_INFO.title}</p>
+                <h1 className="font-headline text-3xl font-extrabold text-white">{PERSONAL_INFO.name}</h1>
+                <p className="font-code-label text-sm text-[#10b981] font-medium mt-1">{PERSONAL_INFO.title}</p>
               </div>
               <div className="font-code-label text-xs text-[#999999] space-y-1 text-left md:text-right">
                 <div>Email: {PERSONAL_INFO.email}</div>
                 <div>Location: {PERSONAL_INFO.location}</div>
-                <div className="text-[#28e98c]">{PERSONAL_INFO.github}</div>
+                <div className="text-[#10b981]">{PERSONAL_INFO.github}</div>
               </div>
             </div>
 
             {/* Education Section */}
             <div className="space-y-3">
-              <h3 className="font-headline text-lg font-bold text-[#28e98c] border-b border-[#2D3139] pb-1 uppercase tracking-wider">
-                Education
+              <h3 className="font-headline text-lg font-bold text-white border-b border-[#2D3139] pb-1 uppercase tracking-wider flex items-center justify-between">
+                <span>Education</span>
+                <span className="text-[#10b981] text-xs">Marist CS</span>
               </h3>
               <div className="flex justify-between items-start">
                 <div>
                   <h4 className="font-bold text-white text-base">{EDUCATION.institution}</h4>
-                  <p className="font-code-label text-xs text-[#b9f1ff]">{EDUCATION.degree}</p>
+                  <p className="font-code-label text-xs text-[#10b981] font-medium">{EDUCATION.degree}</p>
                 </div>
                 <span className="font-code-label text-xs text-[#999999]">{EDUCATION.expectedGraduation}</span>
               </div>
               <p className="font-code-label text-xs text-[#999999]">
-                <strong>Coursework:</strong> {EDUCATION.courses.join(', ')}
+                <strong className="text-[#e2e2e8]">Coursework:</strong> {EDUCATION.courses.join(', ')}
               </p>
             </div>
 
             {/* Experience Section */}
             <div className="space-y-6">
-              <h3 className="font-headline text-lg font-bold text-[#28e98c] border-b border-[#2D3139] pb-1 uppercase tracking-wider">
+              <h3 className="font-headline text-lg font-bold text-white border-b border-[#2D3139] pb-1 uppercase tracking-wider">
                 Work Experience
               </h3>
 
@@ -206,7 +207,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
                     <div>
                       <h4 className="font-bold text-white text-base">{exp.role}</h4>
-                      <p className="font-code-label text-xs text-[#28e98c]">
+                      <p className="font-code-label text-xs text-[#10b981] font-medium">
                         {exp.company} {exp.location && <span className="text-[#999999]">({exp.location})</span>}
                       </p>
                     </div>
@@ -225,7 +226,7 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
                   )}
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {exp.technologies.map((t) => (
-                      <span key={t} className="font-code-label text-[10px] bg-[#1A1D23] px-2 py-0.5 rounded text-[#28e98c] border border-[#2D3139]">
+                      <span key={t} className="font-code-label text-[10px] bg-[#1A1D23] px-2 py-0.5 rounded text-[#cbd5e1] border border-[#2D3139]">
                         {t}
                       </span>
                     ))}
@@ -236,14 +237,14 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
 
             {/* Technical Competencies Section */}
             <div className="space-y-3">
-              <h3 className="font-headline text-lg font-bold text-[#28e98c] border-b border-[#2D3139] pb-1 uppercase tracking-wider">
+              <h3 className="font-headline text-lg font-bold text-white border-b border-[#2D3139] pb-1 uppercase tracking-wider">
                 Technical Skills
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-code-label text-xs">
                 {COMPETENCY_CATEGORIES.map((cat) => (
                   <div key={cat.title} className="p-3 bg-[#1A1D23] rounded border border-[#2D3139]">
-                    <strong className="text-[#28e98c] block mb-1">{cat.title}:</strong>
+                    <strong className="text-[#10b981] block mb-1">{cat.title}:</strong>
                     <span className="text-[#e2e2e8]">{cat.skills.join(', ')}</span>
                   </div>
                 ))}
@@ -252,8 +253,8 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
 
             {/* Certifications Section */}
             <div className="space-y-3">
-              <h3 className="font-headline text-lg font-bold text-[#28e98c] border-b border-[#2D3139] pb-1 uppercase tracking-wider flex items-center gap-2">
-                <Award className="w-5 h-5 text-[#28e98c]" />
+              <h3 className="font-headline text-lg font-bold text-white border-b border-[#2D3139] pb-1 uppercase tracking-wider flex items-center gap-2">
+                <Award className="w-5 h-5 text-[#10b981]" />
                 Certifications
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-code-label">
@@ -268,12 +269,12 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
                         href={cert.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#28e98c] underline text-[11px] hover:text-white"
+                        className="text-[#10b981] underline text-[11px] hover:text-white"
                       >
                         Verify
                       </a>
                     ) : (
-                      <span className="text-[#28e98c] text-[11px]">{cert.date}</span>
+                      <span className="text-[#10b981] text-[11px]">{cert.date}</span>
                     )}
                   </div>
                 ))}
@@ -282,15 +283,15 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
 
             {/* Volunteer Experience */}
             <div className="space-y-3">
-              <h3 className="font-headline text-lg font-bold text-[#28e98c] border-b border-[#2D3139] pb-1 uppercase tracking-wider flex items-center gap-2">
-                <HeartHandshake className="w-5 h-5 text-[#28e98c]" />
+              <h3 className="font-headline text-lg font-bold text-white border-b border-[#2D3139] pb-1 uppercase tracking-wider flex items-center gap-2">
+                <HeartHandshake className="w-5 h-5 text-[#10b981]" />
                 Volunteer & Community Leadership
               </h3>
               <div className="space-y-4">
                 {VOLUNTEER_EXPERIENCES.map((vol, idx) => (
                   <div key={idx} className="p-3 bg-[#1A1D23] rounded border border-[#2D3139] space-y-1">
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-white font-bold">{vol.role} — <span className="text-[#28e98c]">{vol.organization}</span></span>
+                      <span className="text-white font-bold">{vol.role} — <span className="text-[#10b981]">{vol.organization}</span></span>
                       <span className="font-code-label text-[#999999]">{vol.period}</span>
                     </div>
                     {vol.bullets && (
@@ -312,13 +313,13 @@ ${VOLUNTEER_EXPERIENCES.map((v) => `${v.role} @ ${v.organization} (${v.period})\
           <a
             href="/Resume_Descartes_Tuyishime (2).pdf"
             download="Resume_Descartes_Tuyishime.pdf"
-            className="font-code-label text-xs text-[#28e98c] hover:underline flex items-center gap-1.5 font-semibold"
+            className="font-code-label text-xs text-[#10b981] hover:underline flex items-center gap-1.5 font-semibold"
           >
             <Download className="w-4 h-4" /> Download Official PDF Resume
           </a>
           <button
             onClick={onClose}
-            className="font-code-label text-xs bg-[#28e98c] text-black px-6 py-2 rounded font-bold cursor-pointer"
+            className="font-code-label text-xs bg-[#10b981] text-black px-6 py-2 rounded font-bold cursor-pointer hover:bg-[#34d399]"
           >
             Close
           </button>

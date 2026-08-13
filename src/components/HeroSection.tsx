@@ -15,13 +15,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
       {/* Left Content Column */}
       <div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1D23] border border-[#2D3139] mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#28e98c] animate-pulse"></span>
-          <span className="font-code-label text-[12px] text-[#28e98c]">Actively Seeking New Grad Software Engineer Roles</span>
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+          <span className="font-code-label text-[12px] text-[#10b981]">Actively Seeking New Grad Software Engineer Roles</span>
         </div>
 
         <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-white tracking-tight">
           Hi! I am Descartes,<br />
-          <span className="text-[#28e98c]">Seeking New Grad Software Engineer Roles</span><br />
+          <span className="text-[#10b981]">Seeking New Grad Software Engineer Roles</span><br />
           <span className="text-xl sm:text-2xl text-[#e2e2e8]/80 font-semibold">Ex-Microsoft &amp; Google Intern</span>
         </h1>
 
@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
         {/* Key Metrics */}
         <div className="flex items-center gap-6 sm:gap-8 mb-8 pb-4 border-b border-[#2D3139]/60">
           <div>
-            <div className="font-headline text-2xl sm:text-3xl font-extrabold text-[#28e98c]">
+            <div className="font-headline text-2xl sm:text-3xl font-extrabold text-[#10b981]">
               {PERSONAL_INFO.projectCount}
             </div>
             <div className="font-code-label text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999]">
@@ -63,7 +63,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
         <div className="flex flex-wrap gap-4 items-center">
           <a
             href="#projects"
-            className="font-code-label text-[13px] bg-[#28e98c] text-[#000000] px-6 py-3 rounded font-medium hover:bg-[#59ffa3] transition-colors inline-flex items-center gap-2 group shadow-lg"
+            className="font-code-label text-[13px] bg-[#10b981] text-[#000000] px-6 py-3 rounded font-bold hover:bg-[#34d399] transition-colors inline-flex items-center gap-2 group shadow-lg"
           >
             View Work
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -71,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
 
           <a
             href="#contact"
-            className="font-code-label text-[13px] border border-[#28e98c] text-[#28e98c] px-6 py-3 rounded font-medium hover:bg-[#28e98c]/10 transition-colors inline-block"
+            className="font-code-label text-[13px] border border-[#10b981] text-[#10b981] px-6 py-3 rounded font-medium hover:bg-[#10b981]/10 transition-colors inline-block"
           >
             Contact Me
           </a>
@@ -88,43 +88,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
 
       {/* Right Column Portrait */}
       <div className="relative flex justify-center">
-        {/* Glow backdrop */}
-        <div className="absolute inset-0 bg-[#28e98c]/15 blur-[100px] rounded-full pointer-events-none"></div>
-
-        <div className="relative z-10 w-full max-w-md group">
-          <div className="relative rounded-lg overflow-hidden border border-[#2D3139] bg-[#1A1D23] shadow-2xl">
+        <div className="relative z-10 w-full max-w-md">
+          <div className="relative rounded-xl overflow-hidden border border-[#2D3139] bg-[#1A1D23] shadow-2xl">
             <img
               src={PERSONAL_INFO.heroImage}
               alt="Descartes Tuyishime"
-              className="w-full h-auto object-contain transition-all duration-500 cursor-pointer block"
+              className="w-full h-auto object-contain cursor-pointer block"
               onClick={() => setImageModalOpen(true)}
               onError={(e) => {
                 (e.target as HTMLImageElement).src = '/portrait.png';
               }}
             />
-
-            {/* Hover overlay hint */}
-            <div
-              onClick={() => setImageModalOpen(true)}
-              className="absolute inset-0 bg-[#000000]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer gap-2"
-            >
-              <Maximize2 className="w-6 h-6 text-[#28e98c]" />
-              <span className="font-code-label text-[13px] text-white">Expand Artwork</span>
-            </div>
           </div>
 
-          {/* Badge banner positioned BELOW the image (no image overlay, books fully visible) */}
+          {/* Badge banner positioned BELOW the image */}
           <div className="mt-3 bg-[#1A1D23] p-3.5 rounded-lg border border-[#2D3139] flex justify-between items-center shadow-lg">
             <div>
               <p className="font-headline text-sm font-bold text-white">{PERSONAL_INFO.name}</p>
-              <p className="font-code-label text-[11px] text-[#28e98c]">Full-Stack &amp; AI Engineer</p>
+              <p className="font-code-label text-[11px] text-[#10b981]">Software Engineer &amp; AI Developer</p>
             </div>
             <button
               onClick={onOpenTerminal}
-              className="font-code-label text-[11px] bg-[#000000] hover:bg-[#28e98c] hover:text-black text-[#28e98c] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="font-code-label text-[11px] bg-[#111317] hover:bg-[#10b981] hover:text-black text-[#10b981] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+              title="Open Command Palette (Cmd+K)"
             >
               <Terminal className="w-3.5 h-3.5" />
-              CLI
+              Cmd+K
             </button>
           </div>
         </div>
@@ -144,12 +133,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
             />
             <div className="p-4 flex justify-between items-center bg-[#111317]">
               <div>
-                <h3 className="font-headline text-lg font-bold text-[#28e98c]">{PERSONAL_INFO.name}</h3>
+                <h3 className="font-headline text-lg font-bold text-white">{PERSONAL_INFO.name}</h3>
                 <p className="font-code-label text-xs text-[#999999]">Software Engineer &amp; AI Developer</p>
               </div>
               <button
                 onClick={() => setImageModalOpen(false)}
-                className="font-code-label text-xs bg-[#28e98c] text-black px-3 py-1.5 rounded font-medium cursor-pointer"
+                className="font-code-label text-xs bg-[#10b981] text-black px-3 py-1.5 rounded font-medium cursor-pointer hover:bg-[#34d399]"
               >
                 Close
               </button>

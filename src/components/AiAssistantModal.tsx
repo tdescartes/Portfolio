@@ -117,7 +117,7 @@ export const AiAssistantModal: React.FC<AiAssistantModalProps> = ({ isOpen, onCl
             </div>
             <div>
               <h2 className="font-headline text-base font-bold text-white">Ask Descartes AI Assistant</h2>
-              <p className="font-code-label text-xs text-[#28e98c]">Powered by Cybernetic Logic Engine</p>
+              <p className="font-code-label text-xs text-[#28e98c]">Interactive Q&amp;A &amp; Background Assistant</p>
             </div>
           </div>
           <button

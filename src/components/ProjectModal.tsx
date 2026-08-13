@@ -73,7 +73,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Header Modal Bar */}
         <div className="sticky top-0 bg-[#111317]/95 backdrop-blur border-b border-[#2D3139] px-6 py-4 flex justify-between items-center z-10">
           <div>
-            <span className="font-code-label text-xs text-[#28e98c] uppercase">{project.category}</span>
+            <span className="font-code-label text-xs text-[#10b981] uppercase">{project.category}</span>
             <h2 className="font-headline text-2xl font-bold text-white">{project.title}</h2>
           </div>
           <button
@@ -90,7 +90,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             onClick={() => setActiveTab('overview')}
             className={`font-code-label text-xs py-3 px-4 border-b-2 font-medium cursor-pointer transition-colors ${
               activeTab === 'overview'
-                ? 'border-[#28e98c] text-[#28e98c]'
+                ? 'border-[#10b981] text-[#10b981]'
                 : 'border-transparent text-[#999999] hover:text-white'
             }`}
           >
@@ -100,11 +100,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             onClick={() => setActiveTab('interactive')}
             className={`font-code-label text-xs py-3 px-4 border-b-2 font-medium cursor-pointer transition-colors flex items-center gap-1.5 ${
               activeTab === 'interactive'
-                ? 'border-[#28e98c] text-[#28e98c]'
+                ? 'border-[#10b981] text-[#10b981]'
                 : 'border-transparent text-[#999999] hover:text-white'
             }`}
           >
-            <Play className="w-3 h-3 text-[#28e98c]" />
+            <Play className="w-3 h-3 text-[#10b981]" />
             Live System Playground
           </button>
         </div>
@@ -136,7 +136,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-code-label text-xs bg-[#1A1D23] text-[#28e98c] px-3 py-1 rounded border border-[#2D3139]"
+                    className="font-code-label text-xs bg-[#1A1D23] text-[#cbd5e1] px-3 py-1 rounded border border-[#2D3139]"
                   >
                     {tag}
                   </span>
@@ -146,7 +146,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {/* Architecture Details Box */}
               {project.architectureDetails && (
                 <div className="bg-[#1A1D23] p-5 rounded-lg border border-[#2D3139] space-y-4">
-                  <h4 className="font-code-label text-xs text-[#28e98c] uppercase tracking-wider font-bold flex items-center gap-2">
+                  <h4 className="font-code-label text-xs text-[#10b981] uppercase tracking-wider font-bold flex items-center gap-2">
                     <Cpu className="w-4 h-4" />
                     Architecture Specifications
                   </h4>
@@ -161,7 +161,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
                     <div>
                       <span className="text-[#999999] block mb-1">Benchmarked Performance:</span>
-                      <span className="text-[#28e98c] bg-[#111317] p-2 rounded block border border-[#2D3139]">
+                      <span className="text-[#10b981] bg-[#111317] p-2 rounded block border border-[#2D3139]">
                         {project.architectureDetails.performance}
                       </span>
                     </div>
