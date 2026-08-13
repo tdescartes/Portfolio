@@ -67,17 +67,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Open AI Assistant"
             >
               <Sparkles className="w-5 h-5 text-[#b9f1ff]" />
-              <span className="absolute -top-1 -right-1 flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#b9f1ff] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#b9f1ff]"></span>
-              </span>
             </button>
 
             <button
               onClick={onOpenTerminal}
               className="p-2 rounded hover:bg-[#1A1D23] hover:text-[#59ffa3] transition-colors cursor-pointer"
-              title="Open Terminal Shell (Ctrl+K)"
-              aria-label="Open Terminal"
+              title="Command Palette (Cmd+K)"
+              aria-label="Open Command Palette"
             >
               <Terminal className="w-5 h-5" />
             </button>
