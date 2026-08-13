@@ -12,23 +12,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onSelectSkillFilter 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'terminal':
-        return <Terminal className="w-5 h-5 text-[#28e98c]" />;
+        return <Terminal className="w-5 h-5 text-[#10b981]" />;
       case 'hub':
-        return <Network className="w-5 h-5 text-[#28e98c]" />;
+        return <Network className="w-5 h-5 text-[#10b981]" />;
       case 'memory':
-        return <Cpu className="w-5 h-5 text-[#28e98c]" />;
+        return <Cpu className="w-5 h-5 text-[#10b981]" />;
       case 'cloud':
-        return <Cloud className="w-5 h-5 text-[#28e98c]" />;
+        return <Cloud className="w-5 h-5 text-[#10b981]" />;
       default:
-        return <Terminal className="w-5 h-5 text-[#28e98c]" />;
+        return <Terminal className="w-5 h-5 text-[#10b981]" />;
     }
   };
 
   return (
     <section id="about" className="bg-[#1A1D23]/30 py-12 md:py-16 border-y border-[#2D3139]">
       <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
-        <h2 className="font-headline text-xl md:text-2xl font-bold mb-6 md:mb-8 text-[#28e98c] flex items-center gap-3">
-          <span className="text-[#2D3139] font-code-label text-lg">01.</span> About Me
+        <h2 className="font-headline text-xl md:text-2xl font-bold mb-6 md:mb-8 text-white flex items-center gap-3">
+          <span className="text-[#10b981] font-code-label text-lg">01.</span> About Me
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -41,14 +41,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onSelectSkillFilter 
             ))}
 
             <div className="pt-4 border-t border-[#2D3139] flex flex-wrap gap-2.5 font-code-label text-xs">
-              <span className="bg-[#1A1D23] px-3 py-1.5 rounded border border-[#2D3139] text-[#28e98c] flex items-center gap-1.5">
+              <span className="bg-[#1A1D23] px-3 py-1.5 rounded border border-[#2D3139] text-[#10b981] flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="w-3.5 h-3.5" /> BS Computer Science ('25)
               </span>
               <span className="bg-[#1A1D23] px-3 py-1.5 rounded border border-[#2D3139] text-[#e2e2e8] flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#28e98c]" /> Ex-Microsoft &amp; Google Intern
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#10b981]" /> Ex-Microsoft &amp; Google Intern
               </span>
               <span className="bg-[#1A1D23] px-3 py-1.5 rounded border border-[#2D3139] text-[#e2e2e8] flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#28e98c]" /> Open to SWE New Grad Roles
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#10b981]" /> Open to SWE New Grad Roles
               </span>
             </div>
           </div>
@@ -58,9 +58,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onSelectSkillFilter 
             {COMPETENCY_CATEGORIES.map((cat) => (
               <div
                 key={cat.title}
-                className="bg-[#1A1D23] p-4 border border-[#2D3139] rounded-lg glow-effect transition-all duration-300"
+                className="bg-[#1A1D23] p-4 border border-[#2D3139] rounded-lg hover:border-[#10b981]/50 transition-all duration-300"
               >
-                <h3 className="font-code-label text-xs text-[#28e98c] mb-3 flex items-center gap-2 font-bold uppercase tracking-wider">
+                <h3 className="font-code-label text-xs text-[#10b981] mb-3 flex items-center gap-2 font-bold uppercase tracking-wider">
                   {getCategoryIcon(cat.icon)}
                   {cat.title}
                 </h3>
@@ -75,8 +75,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onSelectSkillFilter 
                       onClick={() => onSelectSkillFilter?.(skill)}
                       title={`Click to filter projects with ${skill}`}
                     >
-                      <span className="text-[#28e98c] font-code-label text-[10px]">▹</span>
-                      <span className={hoveredSkill === skill ? 'text-[#28e98c] font-medium' : ''}>
+                      <span className="text-[#10b981] font-code-label text-[10px]">▹</span>
+                      <span className={hoveredSkill === skill ? 'text-[#10b981] font-medium' : ''}>
                         {skill}
                       </span>
                     </li>
