@@ -88,43 +88,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
 
       {/* Right Column Portrait */}
       <div className="relative flex justify-center">
-        {/* Glow backdrop */}
-        <div className="absolute inset-0 bg-[#28e98c]/15 blur-[100px] rounded-full pointer-events-none"></div>
-
-        <div className="relative z-10 w-full max-w-md group">
-          <div className="relative rounded-lg overflow-hidden border border-[#2D3139] bg-[#1A1D23] shadow-2xl">
+        <div className="relative z-10 w-full max-w-md">
+          <div className="relative rounded-xl overflow-hidden border border-[#2D3139] bg-[#1A1D23] shadow-2xl">
             <img
               src={PERSONAL_INFO.heroImage}
               alt="Descartes Tuyishime"
-              className="w-full h-auto object-contain transition-all duration-500 cursor-pointer block"
+              className="w-full h-auto object-contain cursor-pointer block"
               onClick={() => setImageModalOpen(true)}
               onError={(e) => {
                 (e.target as HTMLImageElement).src = '/portrait.png';
               }}
             />
-
-            {/* Hover overlay hint */}
-            <div
-              onClick={() => setImageModalOpen(true)}
-              className="absolute inset-0 bg-[#000000]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer gap-2"
-            >
-              <Maximize2 className="w-6 h-6 text-[#28e98c]" />
-              <span className="font-code-label text-[13px] text-white">Expand Artwork</span>
-            </div>
           </div>
 
-          {/* Badge banner positioned BELOW the image (no image overlay, books fully visible) */}
+          {/* Badge banner positioned BELOW the image */}
           <div className="mt-3 bg-[#1A1D23] p-3.5 rounded-lg border border-[#2D3139] flex justify-between items-center shadow-lg">
             <div>
               <p className="font-headline text-sm font-bold text-white">{PERSONAL_INFO.name}</p>
-              <p className="font-code-label text-[11px] text-[#28e98c]">Full-Stack &amp; AI Engineer</p>
+              <p className="font-code-label text-[11px] text-[#28e98c]">Software Engineer &amp; AI Developer</p>
             </div>
             <button
               onClick={onOpenTerminal}
-              className="font-code-label text-[11px] bg-[#000000] hover:bg-[#28e98c] hover:text-black text-[#28e98c] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer"
+              className="font-code-label text-[11px] bg-[#111317] hover:bg-[#28e98c] hover:text-black text-[#28e98c] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer"
+              title="Open Command Palette (Cmd+K)"
             >
               <Terminal className="w-3.5 h-3.5" />
-              CLI
+              Cmd+K
             </button>
           </div>
         </div>
