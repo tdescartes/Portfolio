@@ -16,7 +16,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
       <div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#1A1D23] border border-[#2D3139] mb-6">
           <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-          <span className="font-code-label text-[12px] text-[#10b981]">Actively Seeking New Grad Software Engineer Roles</span>
+          <span className="font-body text-xs text-[#10b981] font-medium">Actively Seeking New Grad Software Engineer Roles</span>
         </div>
 
         <h1 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-white tracking-tight">
@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
             <div className="font-headline text-2xl sm:text-3xl font-extrabold text-[#10b981]">
               {PERSONAL_INFO.projectCount}
             </div>
-            <div className="font-code-label text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999]">
+            <div className="font-body text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999] font-medium">
               Projects Built
             </div>
           </div>
@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
             <div className="font-headline text-2xl sm:text-3xl font-extrabold text-[#b9f1ff]">
               Ex-Microsoft &amp; Google
             </div>
-            <div className="font-code-label text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999]">
+            <div className="font-body text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999] font-medium">
               Internship Background
             </div>
           </div>
@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
             <div className="font-headline text-2xl sm:text-3xl font-extrabold text-white">
               May 2025
             </div>
-            <div className="font-code-label text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999]">
+            <div className="font-body text-[11px] sm:text-[12px] uppercase tracking-wider text-[#999999] font-medium">
               Marist CS
             </div>
           </div>
@@ -63,7 +63,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
         <div className="flex flex-wrap gap-4 items-center">
           <a
             href="#projects"
-            className="font-code-label text-[13px] bg-[#10b981] text-[#000000] px-6 py-3 rounded font-bold hover:bg-[#34d399] transition-colors inline-flex items-center gap-2 group shadow-lg"
+            className="font-body text-xs bg-[#10b981] text-[#000000] px-6 py-3 rounded font-bold hover:bg-[#34d399] transition-colors inline-flex items-center gap-2 group shadow-lg"
           >
             View Work
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -71,14 +71,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
 
           <a
             href="#contact"
-            className="font-code-label text-[13px] border border-[#10b981] text-[#10b981] px-6 py-3 rounded font-medium hover:bg-[#10b981]/10 transition-colors inline-block"
+            className="font-body text-xs border border-[#10b981] text-[#10b981] px-6 py-3 rounded font-semibold hover:bg-[#10b981]/10 transition-colors inline-block"
           >
             Contact Me
           </a>
 
           <button
             onClick={onOpenAiAssistant}
-            className="font-code-label text-[13px] border border-[#2D3139] bg-[#1A1D23] text-[#b9f1ff] px-4 py-3 rounded font-medium hover:border-[#b9f1ff] transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+            className="font-body text-xs border border-[#2D3139] bg-[#1A1D23] text-[#b9f1ff] px-4 py-3 rounded font-semibold hover:border-[#b9f1ff] transition-colors inline-flex items-center gap-1.5 cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-[#b9f1ff]" />
             Ask AI
@@ -105,11 +105,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTerminal, onOpen
           <div className="mt-3 bg-[#1A1D23] p-3.5 rounded-lg border border-[#2D3139] flex justify-between items-center shadow-lg">
             <div>
               <p className="font-headline text-sm font-bold text-white">{PERSONAL_INFO.name}</p>
-              <p className="font-code-label text-[11px] text-[#10b981]">Software Engineer &amp; AI Developer</p>
+              <p className="font-body text-xs text-[#10b981] font-medium">Software Engineer &amp; AI Developer</p>
             </div>
             <button
               onClick={onOpenTerminal}
-              className="font-code-label text-[11px] bg-[#111317] hover:bg-[#10b981] hover:text-black text-[#10b981] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
+              className="font-body text-xs bg-[#111317] hover:bg-[#10b981] hover:text-black text-[#10b981] border border-[#2D3139] px-3 py-1.5 rounded transition-colors flex items-center gap-1.5 cursor-pointer font-medium"
               title="Open Command Palette (Cmd+K)"
             >
               <Terminal className="w-3.5 h-3.5" />

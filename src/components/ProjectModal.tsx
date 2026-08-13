@@ -189,17 +189,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.id === 'thermaguard' && (
                 <div className="bg-[#000000] p-6 rounded-lg border border-[#2D3139] space-y-4 font-code-label">
                   <div className="flex justify-between items-center border-b border-[#2D3139] pb-3">
-                    <div className="flex items-center gap-2 text-[#28e98c]">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#28e98c] animate-ping"></span>
-                      <span className="text-xs font-bold">ESP32 SENSOR CLUSTER #09 - LIVE TELEMETRY</span>
+                    <div className="flex items-center gap-2 text-[#10b981]">
+                      <span className="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                      <span className="text-xs font-bold">ESP32 Sensor Telemetry Stream</span>
                     </div>
-                    <span className="text-xs text-[#999999]">MQTT PORT 1883</span>
+                    <span className="text-xs text-[#999999]">MQTT Port 1883</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 my-4">
                     <div className="p-4 bg-[#1A1D23] rounded border border-[#2D3139]">
                       <span className="text-xs text-[#999999] block">Core Thermal Sensor</span>
-                      <span className={`text-3xl font-extrabold ${sensorTemp > 45.0 ? 'text-[#ffb4ab]' : 'text-[#28e98c]'}`}>
+                      <span className={`text-3xl font-extrabold ${sensorTemp > 45.0 ? 'text-[#ffb4ab]' : 'text-[#10b981]'}`}>
                         {sensorTemp}°C
                       </span>
                     </div>
@@ -210,19 +210,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   </div>
 
                   <div className="p-3 bg-[#111317] rounded text-xs text-[#999999]">
-                    Status: {sensorTemp > 45.0 ? <span className="text-[#ffb4ab] font-bold">ALERT: Thermal Threshold Exceeded! Triggering cooling pump...</span> : <span className="text-[#28e98c]">NOMINAL: Kalman Filter Active. Variance within bounds.</span>}
+                    Status: {sensorTemp > 45.0 ? <span className="text-[#ffb4ab] font-bold">Alert: Thermal threshold exceeded. Actuating cooling loop...</span> : <span className="text-[#10b981]">Nominal: Sensor variance within expected parameters.</span>}
                   </div>
                 </div>
               )}
 
               {project.id === 'xcompiler' && (
                 <div className="bg-[#000000] p-5 rounded-lg border border-[#2D3139] space-y-4 font-code-label">
-                  <label className="text-xs text-[#28e98c] block font-bold">Interactive Compiler Input:</label>
+                  <label className="text-xs text-[#10b981] block font-bold">Compiler Code Input:</label>
                   <textarea
                     value={codeSample}
                     onChange={(e) => setCodeSample(e.target.value)}
                     rows={4}
-                    className="w-full bg-[#111317] text-[#28e98c] p-3 rounded border border-[#2D3139] focus:outline-none text-xs resize-none"
+                    className="w-full bg-[#111317] text-[#10b981] p-3 rounded border border-[#2D3139] focus:outline-none text-xs resize-none"
                   ></textarea>
 
                   <div className="space-y-2">
@@ -240,7 +240,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
               {project.id === 'poruta' && (
                 <div className="bg-[#000000] p-5 rounded-lg border border-[#2D3139] space-y-4 font-code-label">
-                  <label className="text-xs text-[#28e98c] block font-bold">Test Manifest Document Input:</label>
+                  <label className="text-xs text-[#10b981] block font-bold">Test Manifest Document Input:</label>
                   <textarea
                     value={manifestText}
                     onChange={(e) => setManifestText(e.target.value)}
@@ -249,14 +249,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   ></textarea>
                   <button
                     onClick={handleRunClassifier}
-                    className="bg-[#28e98c] text-black px-4 py-2 rounded text-xs font-bold hover:bg-[#59ffa3] transition-colors cursor-pointer"
+                    className="bg-[#10b981] text-black px-4 py-2 rounded text-xs font-bold hover:bg-[#34d399] transition-colors cursor-pointer"
                   >
-                    Run AI HS Classification
+                    Run AI Classification
                   </button>
 
                   {classificationResult && (
-                    <div className="p-4 bg-[#1A1D23] rounded border border-[#28e98c] space-y-2 text-xs">
-                      <div className="flex justify-between text-[#28e98c] font-bold">
+                    <div className="p-4 bg-[#1A1D23] rounded border border-[#10b981] space-y-2 text-xs">
+                      <div className="flex justify-between text-[#10b981] font-bold">
                         <span>Predicted Tariff HS Code: {classificationResult.hsCode}</span>
                         <span>Confidence: {(classificationResult.confidence * 100).toFixed(1)}%</span>
                       </div>
@@ -268,14 +268,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
               {(project.id === 'sheltrise' || project.id === 'pathos') && (
                 <div className="bg-[#000000] p-6 rounded-lg border border-[#2D3139] text-center font-code-label space-y-4">
-                  <div className="w-12 h-12 bg-[#28e98c]/20 text-[#28e98c] rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-[#10b981]/20 text-[#10b981] rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle className="w-6 h-6" />
                   </div>
-                  <h4 className="text-white text-base font-bold">Interactive Simulator Ready</h4>
+                  <h4 className="text-white text-base font-bold">Interactive Demo Ready</h4>
                   <p className="text-xs text-[#999999] max-w-md mx-auto">
                     {project.id === 'sheltrise'
                       ? 'Simulates multi-tenant ticket routing with WebSocket updates and automated Stripe billing integrations.'
-                      : 'Simulates the browser windowing z-index shell with floating terminal widgets.'}
+                      : 'Simulates the browser windowing shell with interactive widgets.'}
                   </p>
                 </div>
               )}

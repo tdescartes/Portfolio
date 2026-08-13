@@ -43,12 +43,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSendMessageLog
       <div className="flex flex-wrap justify-center gap-6 mb-12">
         <a
           href={`mailto:${PERSONAL_INFO.email}`}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1D23] border border-[#2D3139] rounded font-code-label text-xs text-[#e2e2e8] hover:border-[#10b981] hover:text-[#10b981] transition-all"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1D23] border border-[#2D3139] rounded font-body text-xs text-[#e2e2e8] hover:border-[#10b981] hover:text-[#10b981] transition-all"
         >
           <Mail className="w-4 h-4 text-[#10b981]" />
           <span>{PERSONAL_INFO.email}</span>
         </a>
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1D23] border border-[#2D3139] rounded font-code-label text-xs text-[#999999]">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1A1D23] border border-[#2D3139] rounded font-body text-xs text-[#999999]">
           <MapPin className="w-4 h-4 text-[#10b981]" />
           <span>{PERSONAL_INFO.location}</span>
         </div>
@@ -60,16 +60,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSendMessageLog
           <div className="w-12 h-12 bg-[#10b981]/20 text-[#10b981] rounded-full flex items-center justify-center mx-auto">
             <CheckCircle className="w-8 h-8" />
           </div>
-          <h4 className="font-headline text-xl font-bold text-white">Message Transmitted!</h4>
+          <h4 className="font-headline text-xl font-bold text-white">Message Sent Successfully!</h4>
           <p className="font-body text-sm text-[#999999]">
-            Thank you <strong className="text-white">{formData.name}</strong>. Your note has been logged to Descartes' terminal queue. He will get back to you at <span className="text-[#10b981]">{formData.email}</span> shortly.
+            Thank you <strong className="text-white">{formData.name}</strong>. Your note has been sent directly to Descartes' inbox. He will reply to <span className="text-[#10b981]">{formData.email}</span> shortly.
           </p>
           <button
             onClick={() => {
               setSubmitted(false);
               setFormData({ name: '', email: '', message: '' });
             }}
-            className="font-code-label text-xs bg-[#10b981] text-black px-6 py-2.5 rounded font-medium cursor-pointer hover:bg-[#34d399]"
+            className="font-body text-xs bg-[#10b981] text-black px-6 py-2.5 rounded font-bold cursor-pointer hover:bg-[#34d399] transition-colors"
           >
             Send Another Message
           </button>
@@ -124,7 +124,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSendMessageLog
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full font-code-label text-xs bg-[#10b981] text-[#000000] py-4 rounded font-bold hover:bg-[#34d399] transition-colors mt-4 flex items-center justify-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
+            className="w-full font-body text-xs bg-[#10b981] text-[#000000] py-3.5 rounded font-bold hover:bg-[#34d399] transition-colors mt-4 flex items-center justify-center gap-2 cursor-pointer shadow-lg disabled:opacity-50"
           >
             {isSubmitting ? (
               <span>Sending Message...</span>

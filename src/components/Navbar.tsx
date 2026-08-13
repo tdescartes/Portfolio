@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <a
               key={link.label}
               href={link.href}
-              className="font-code-label text-[13px] text-[#999999] hover:text-[#10b981] transition-colors duration-200 tracking-wide"
+              className="font-body text-sm text-[#999999] hover:text-[#10b981] font-medium transition-colors duration-200 tracking-wide"
             >
               {link.label}
             </a>
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Resume Button */}
           <button
             onClick={onOpenResume}
-            className="hidden sm:flex items-center gap-1.5 font-code-label text-[13px] text-[#000000] bg-[#10b981] px-4 py-2 rounded font-bold hover:bg-[#34d399] transition-colors shadow-sm cursor-pointer"
+            className="hidden sm:flex items-center gap-1.5 font-body text-xs text-[#000000] bg-[#10b981] px-4 py-2 rounded font-bold hover:bg-[#34d399] transition-colors shadow-sm cursor-pointer"
             title="View & Download Resume"
           >
             <FileText className="w-4 h-4" />
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-code-label text-[14px] text-[#999999] hover:text-[#10b981] py-2 px-1 transition-colors"
+                className="font-body text-sm text-[#999999] hover:text-[#10b981] py-2 px-1 transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenResume();
               }}
-              className="w-full flex items-center justify-center gap-2 font-code-label text-[13px] text-[#000000] bg-[#10b981] py-2.5 rounded font-bold hover:bg-[#34d399]"
+              className="w-full flex items-center justify-center gap-2 font-body text-xs text-[#000000] bg-[#10b981] py-2.5 rounded font-bold hover:bg-[#34d399]"
             >
               <FileText className="w-4 h-4" />
               View Resume
@@ -122,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenTerminal();
               }}
-              className="w-full flex items-center justify-center gap-2 font-code-label text-[13px] text-[#10b981] border border-[#10b981] py-2.5 rounded font-medium"
+              className="w-full flex items-center justify-center gap-2 font-body text-xs text-[#10b981] border border-[#10b981] py-2.5 rounded font-medium"
             >
               <Terminal className="w-4 h-4" />
               Command Palette
