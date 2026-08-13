@@ -34,7 +34,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       category: 'Actions',
       title: 'View & Download Resume PDF',
       subtitle: 'Open official resume document',
-      icon: <FileText className="w-4 h-4 text-[#28e98c]" />,
+      icon: <FileText className="w-4 h-4 text-[#10b981]" />,
       action: () => {
         onClose();
         onOpenResume();
@@ -56,7 +56,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       category: 'Navigation',
       title: 'Jump to About Section',
       subtitle: 'Background summary & competencies',
-      icon: <User className="w-4 h-4 text-[#28e98c]" />,
+      icon: <User className="w-4 h-4 text-[#10b981]" />,
       action: () => {
         onClose();
         document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -65,9 +65,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'experience',
       category: 'Navigation',
-      title: 'Jump to Experience & Internships',
-      subtitle: 'Microsoft & Google engineering work',
-      icon: <Briefcase className="w-4 h-4 text-[#28e98c]" />,
+      title: 'Jump to Experience & Education',
+      subtitle: 'Work history, Marist College & certifications',
+      icon: <Briefcase className="w-4 h-4 text-[#10b981]" />,
       action: () => {
         onClose();
         document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
@@ -76,9 +76,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'projects',
       category: 'Navigation',
-      title: 'Jump to Featured Projects',
-      subtitle: 'SheltRise, Poruta, ThermaGuard, xCompiler',
-      icon: <Folder className="w-4 h-4 text-[#28e98c]" />,
+      title: 'Jump to Featured Work',
+      subtitle: '10+ engineering projects & live demos',
+      icon: <Folder className="w-4 h-4 text-[#10b981]" />,
       action: () => {
         onClose();
         document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -87,9 +87,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'contact',
       category: 'Navigation',
-      title: 'Jump to Contact',
-      subtitle: 'Send direct message or email note',
-      icon: <Mail className="w-4 h-4 text-[#28e98c]" />,
+      title: 'Jump to Contact Section',
+      subtitle: 'Get in touch for SWE opportunities',
+      icon: <Mail className="w-4 h-4 text-[#10b981]" />,
       action: () => {
         onClose();
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -102,7 +102,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       subtitle: PERSONAL_INFO.github,
       icon: <Github className="w-4 h-4 text-[#999999]" />,
       action: () => {
-        onClose();
         window.open(PERSONAL_INFO.github, '_blank', 'noopener,noreferrer');
       },
     },
@@ -113,7 +112,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       subtitle: PERSONAL_INFO.linkedin,
       icon: <Linkedin className="w-4 h-4 text-[#999999]" />,
       action: () => {
-        onClose();
         window.open(PERSONAL_INFO.linkedin, '_blank', 'noopener,noreferrer');
       },
     },
@@ -209,7 +207,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   onClick={item.action}
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full px-3 py-2.5 rounded-lg flex items-center justify-between transition-colors text-left cursor-pointer ${
-                    isSelected ? 'bg-[#1A1D23] border border-[#28e98c]/40 text-white' : 'text-[#e2e2e8] hover:bg-[#1A1D23]/50'
+                    isSelected ? 'bg-[#1A1D23] border border-[#10b981]/40 text-white' : 'text-[#e2e2e8] hover:bg-[#1A1D23]/50'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -226,7 +224,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       <div className="font-code-label text-[11px] text-[#999999]">{item.subtitle}</div>
                     </div>
                   </div>
-                  <ArrowRight className={`w-4 h-4 text-[#28e98c] transition-transform ${isSelected ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`} />
+                  <ArrowRight className={`w-4 h-4 text-[#10b981] transition-transform ${isSelected ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`} />
                 </button>
               );
             })
