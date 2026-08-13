@@ -55,7 +55,7 @@ Featured Systems & Engineering Projects:
 
 Certifications: Agentic AI (DeepLearning.AI), Document AI: From OCR to Agentic Doc Extraction (DeepLearning.AI), Machine Learning & Deep Learning Specializations (Coursera/DeepLearning.AI), IBM DevOps Professional Certificate, Udacity Front End Nanodegree.
 
-Contact info: tuyishime.descartes@outlook.com | tuyishime.descartes@gmail.com | tdescartes.dev | github.com/tdescartes | linkedin.com/in/descartestuyishime
+Contact info: tuyishime.descartes@outlook.com | tuyishime.descartes@gmail.com | tdescartes.dev | github.com/tdescartes | linkedin.com/in/tdescartes
 
 Answer the user's question concisely, professionally, and accurately in 1-3 sentences as Descartes' AI assistant.
 
