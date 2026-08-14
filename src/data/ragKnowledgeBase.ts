@@ -286,6 +286,11 @@ export function retrieveRagContext(query: string, maxChunks = 4): string {
 
   scored.sort((a, b) => b.score - a.score);
 
+  const topChunks = scored
+    .slice(0, maxChunks)
+    .filter((s) => s.score > 0)
+    .map((s) => s.chunk.content);
+
   if (topChunks.length > 0) {
     return topChunks.join('\n\n');
   }
@@ -311,28 +316,37 @@ export function synthesizeRagAnswer(query: string): string {
   }
 
   // Specific Technology Queries
-  if (/\b(c\+\+|cpp|cplusplus)\b/i.test(q)) {
+  if (q.includes('c++') || q.includes('cpp') || q.includes('cplusplus')) {
     return `Yes! Descartes is proficient in C++. He used C++ to build ThermaGuard ESP32, an embedded thermal monitoring system running dual-core FreeRTOS with a custom 7-byte binary UART packet protocol and predictive Kalman filtering.`;
   }
 
-  if (/\b(python|pytorch|tensorflow|fastapi|django)\b/i.test(q)) {
+  if (q.includes('python') || q.includes('pytorch') || q.includes('tensorflow') || q.includes('fastapi') || q.includes('django')) {
     return `Python is one of Descartes' core languages! He uses Python extensively for FastAPI backends, PyTorch ML models, NVIDIA Triton document OCR pipelines in Poruta, and data analytics workflows.`;
   }
 
-  if (/\b(typescript|javascript|react|next\.js|node\.js|node)\b/i.test(q)) {
+  if (q.includes('typescript') || q.includes('javascript') || q.includes('react') || q.includes('next.js') || q.includes('node')) {
     return `TypeScript and React are central to Descartes' engineering work. He built xCompiler (a 6502 BNF compiler parsing 50k+ tokens/sec) and PathOS in TypeScript, and developed React/Next.js platforms for SheltRise and Poruta.`;
   }
 
-  if (/\b(java|gcp|app engine|datastore|liferay)\b/i.test(q) && !q.includes('script')) {
+  if ((q.includes('java') && !q.includes('script')) || q.includes('gcp') || q.includes('app engine') || q.includes('datastore') || q.includes('liferay')) {
     return `Descartes has extensive Java experience. He built full-stack GCP App Engine apps at Google during his Software Engineering Fellowship, and developed Java portlets and web services for Marist Magazine.`;
   }
 
-  if (/\b(aws|bedrock|rag|s3|cloud|azure|docker|kubernetes)\b/i.test(q)) {
+  if (q.includes('aws') || q.includes('bedrock') || q.includes('rag') || q.includes('s3') || q.includes('azure') || q.includes('docker') || q.includes('kubernetes')) {
     return `Descartes works with AWS (Bedrock RAG, S3 presigned URLs), Azure (Functions, Pipelines CI/CD), Docker, and GCP. At Microsoft, he engineered TypeSpec Azure Functions, and built AWS Bedrock RAG pipelines for SheltRise!`;
   }
 
-  if (/\b(c#|\.net|csharp)\b/i.test(q)) {
+  if (q.includes('c#') || q.includes('.net') || q.includes('csharp')) {
     return `Yes! Descartes used C# and .NET during his Software Engineer Internship at Microsoft in Redmond, WA, engineering Azure Function prototypes for cloud API tooling.`;
+  }
+
+  // Location & Hiring Status
+  if (q.includes('locate') || q.includes('location') || q.includes('relocat') || q.includes('city') || q.includes('poughkeepsie') || q.includes('nyc') || q.includes('seattle')) {
+    return `Descartes is based in Poughkeepsie, NY 12601 and is open to full-time New Grad software engineering roles in NYC, Seattle, or Remote!`;
+  }
+
+  if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('job') || q.includes('role') || q.includes('reach') || q.includes('work') || q.includes('resume') || q.includes('available')) {
+    return `Descartes is based in Poughkeepsie, NY 12601 (open to NYC and remote full-time positions) and is actively interviewing for New Grad Software Engineering roles in backend, full-stack, systems, or AI! Reach him directly at tuyishime.descartes@outlook.com or connect at linkedin.com/in/tdescartes.`;
   }
 
   // Specific Experience & Internship Queries
